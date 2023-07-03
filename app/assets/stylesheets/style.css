@@ -1,3 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Expletus+Sans:wght@700&display=swap');
+
 .navbar .active {
   display: flex !important;
+}
+
+#splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#splash-screen h1 {
+  position: relative;
+  font-family: 'Expletus Sans', serif;
+  font-size: 5em;
+  text-align: center;
+  color: black;
+}
+
+#splash-screen img {
+  width: 5em;
+  margin-bottom: -1.5em;
+  z-index: 1;
+  transform: rotate(15deg) translate(25px, 2px);
 }
