@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :category_purchases
   resources :purchases
   resources :categories
   resources :users
