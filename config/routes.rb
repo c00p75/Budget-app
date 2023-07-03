@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root "parchases#index"
+  root "purchases#index"
   resources :category_purchases
   resources :purchases
   resources :categories
