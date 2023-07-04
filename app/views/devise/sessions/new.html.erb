@@ -1,15 +1,17 @@
-<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {id: "login-form", class: "p-4"}) do |f| %>
-  <div class="field row">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "form-control border-0 border-bottom my-4" %>
-  </div>
+<div class="container bg-white">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {id: "login-form", class: "p-4"}) do |f| %>
+    <div class="field row">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "form-control border-0 border-bottom my-4" %>
+    </div>
 
-  <div class="field row">
-    <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", class: "form-control border-0 border-bottom my-4" %>
-  </div>
+    <div class="field row">
+      <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", class: "form-control border-0 border-bottom my-4" %>
+    </div>
 
-  <div class="mt-4 d-flex justify-content-center">
-    <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-      <%= link_to "Forgot your password?", new_password_path(resource_name), class: "text-decoration-none text-secondary" %>
-    <% end %>
-  </div>
-<% end %>
+    <div class="mt-4 d-flex justify-content-center">
+      <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+        <%= link_to "Forgot your password?", new_password_path(resource_name), class: "text-decoration-none text-secondary" %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

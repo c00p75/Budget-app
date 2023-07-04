@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_03_150718) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_03_105904) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -19,16 +19,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_03_150718) do
     t.string "icon"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_categories_on_name", unique: true
   end
 
-  create_table "category_purchases", force: :cascade do |t|
+  create_table "categories_purchases", id: false, force: :cascade do |t|
     t.bigint "category_id", null: false
     t.bigint "purchase_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["category_id"], name: "index_category_purchases_on_category_id"
-    t.index ["purchase_id"], name: "index_category_purchases_on_purchase_id"
+    t.index ["category_id", "purchase_id"], name: "index_categories_purchases_on_category_id_and_purchase_id"
   end
 
   create_table "purchases", force: :cascade do |t|
@@ -49,15 +45,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_03_150718) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string "unconfirmed_email"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "category_purchases", "categories"
-  add_foreign_key "category_purchases", "purchases"
   add_foreign_key "purchases", "users", column: "author_id"
 end

@@ -1,8 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Expletus+Sans:wght@700&display=swap');
 
+body {
+  background: whitesmoke !important;
+}
+
+a {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
 .navbar .active {
   display: flex !important;
 }
+
+.turbo-progress-bar { background-color: white; }
 
 #splash-screen {
   position: fixed;
@@ -35,5 +46,9 @@
 .nav-submit {
   background: none;
   color: white;
-  border: 1px solid whitesmoke;
+  border: 0;
+}
+
+.category-icon {
+  width: 5em;
 }

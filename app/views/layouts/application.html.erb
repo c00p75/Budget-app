@@ -21,10 +21,10 @@
         <h1 class="fs-3 fw-normal m-0">
           <%= current_page?(new_user_session_path) ? 'LOGIN' : controller_name %>  
         </h1>
-        <% if current_page?(new_user_session_path) %>
-          <button id="login-submit" class="fs-5 fw-light nav-submit">Login</button>
-        <% elsif current_page?(new_user_registration_path) %>
-          <button id="signup-submit" class="fs-5 fw-light nav-submit">Signup</button>
+        <% if controller_name == 'sessions' %>
+          <%= button_tag "Login", id: "login-submit", class: "fs-5 fw-light nav-submit", form: "login-form" %>
+        <% elsif controller_name == 'registrations' %>
+          <%= button_tag "Next", id: "login-submit", class: "fs-5 fw-light nav-submit", form: "signup-form" %>
         <%else%>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon">Menu</span>
@@ -45,9 +45,9 @@
         <%end%>
       </div>
     </nav>
-    <div class="container">
+    <div>
       <%if notice%>
-        <p class="alert alert-secondary"><%= notice %></p>
+        <p class="alert alert-secondary" style="color: green"><%= notice %></p>
       <%end%>
 
       <%if alert%>
