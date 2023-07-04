@@ -7,7 +7,7 @@
       Budget <br> Wiz
     </h1>
   </div>
-  <div class="row">
-    <%= link_to "Log in", user_signed_in? ? purchases_path : new_user_session_path, class: "btn btn-dark my-5" %><br />
-    <%= link_to "Sign up", user_signed_in? ? purchases_path : new_user_registration_path, class: "btn btn-dark mb-5" %><br />
+  <div class="row px-2" style="width: 100%">
+    <%= link_to "LOG IN", user_signed_in? ? purchases_path : new_user_session_path, class: "btn text-light p-2", style: "background: royalblue" %><br />
+    <%= link_to "SIGN UP", user_signed_in? ? purchases_path : new_user_registration_path, class: "btn p-2" %><br />
 </div>

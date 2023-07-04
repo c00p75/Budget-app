@@ -12,7 +12,7 @@
   height: 100%;
   background: white;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   flex-direction: column;
 }
@@ -20,14 +20,20 @@
 #splash-screen h1 {
   position: relative;
   font-family: 'Expletus Sans', serif;
-  font-size: 5em;
+  font-size: 4em;
   text-align: center;
   color: black;
 }
 
 #splash-screen img {
-  width: 5em;
+  width: 4em;
   margin-bottom: -1.5em;
   z-index: 1;
-  transform: rotate(15deg) translate(25px, 2px);
+  transform: rotate(20deg) translate(19px, -4px);
+}
+
+.nav-submit {
+  background: none;
+  color: white;
+  border: 1px solid whitesmoke;
 }
