@@ -22,9 +22,11 @@
           <%= current_page?(new_user_session_path) ? 'LOGIN' : controller_name %>  
         </h1>
         <% if controller_name == 'sessions' %>
-          <%= button_tag "Login", id: "login-submit", class: "fs-5 fw-light nav-submit", form: "login-form" %>
+          <%= button_tag "Login", class: "fs-5 fw-light nav-submit", form: "login-form" %>
         <% elsif controller_name == 'registrations' %>
-          <%= button_tag "Next", id: "login-submit", class: "fs-5 fw-light nav-submit", form: "signup-form" %>
+          <%= button_tag "Next", class: "fs-5 fw-light nav-submit", form: "signup-form" %>
+        <% elsif controller_name == 'categories' && action_name == 'new' %>
+          <%= button_tag "Add", class: "fs-5 fw-light nav-submit", form: "category-form" %>
         <%else%>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon">Menu</span>

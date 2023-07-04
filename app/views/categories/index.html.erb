@@ -1,9 +1,11 @@
 <div class="container">
   <div id="categories" style="background: whitesmoke">
+    <%= link_to new_category_path, class: 'position-absolute bottom-0 end-0 m-4 z-1' do %>
+      <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 20 20"><path fill="forestgreen" d="M11 9V5H9v4H5v2h4v4h2v-4h4V9h-4zm-1 11a10 10 0 1 1 0-20a10 10 0 0 1 0 20z"></path></svg>
+    <% end %>
+
     <% @categories.each do |category| %>
         <%= link_to render category %>
     <% end %>
   </div>
-
-  <%= link_to "New category", new_category_path %>
 </div>
