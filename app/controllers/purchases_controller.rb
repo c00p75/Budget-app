@@ -18,7 +18,7 @@ class PurchasesController < ApplicationController
   def edit
   end
 
-  # POST /purchases or /purchases.json
+  # POST /purchases
   def create
     @purchase = Purchase.new(purchase_params)
     @purchase.author = current_user
@@ -26,7 +26,7 @@ class PurchasesController < ApplicationController
     @category.purchases << @purchase
 
     if @purchase.save
-      redirect_to purchase_url(@purchase), notice: "Purchase was successfully created."
+      redirect_to category_url(params[:purchase][:category_id]), notice: 'Transaction was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end

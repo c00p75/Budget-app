@@ -13,7 +13,7 @@
 
   <div class="d-flex justify-content-center" style="width: 25%">
     <strong>
-      <%= category.purchases.count > 0 ? category.purchases.count : '$0' %>
+      $<%= category.purchases.count > 0 ? category.purchases.sum(:amount) : 0 %>
     </strong>
   </div>
 
