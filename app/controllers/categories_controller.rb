@@ -23,12 +23,10 @@ class CategoriesController < ApplicationController
   def create
     @category = Category.new(category_params)
 
-    respond_to do |format|
-      if @category.save
-        redirect_to category_url(@category), notice: "Category was successfully created."
-      else
-        render :new, status: :unprocessable_entity
-      end
+    if @category.save
+      redirect_to category_url(@category), notice: "Category was successfully created."
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 

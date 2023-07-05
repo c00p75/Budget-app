@@ -1,4 +1,4 @@
-<%= form_with(model: purchase) do |form| %>
+<%= form_with(model: purchase, html: {id: "purchase-form", class: "p-4"}) do |form| %>
   <% if purchase.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(purchase.errors.count, "error") %> prohibited this purchase from being saved:</h2>
@@ -11,22 +11,16 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="field row">
+    <%= form.text_field :name, autofocus: true, autocomplete: "name", placeholder: "Name", class: "form-control border-0 border-bottom mb-4" %>
   </div>
 
-  <div>
-    <%= form.label :amount, style: "display: block" %>
-    <%= form.number_field :amount %>
+  <div class="field row">
+    <%= form.number_field :amount, placeholder: "Amount ($)", class: "form-control border-0 border-bottom mb-4" %>
   </div>
 
-  <div>
-    <%= form.label :author_id, style: "display: block" %>
-    <%= form.text_field :author_id %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+  <div class="field row">
+    <%= form.label :category_id, style: "display: block", class: 'mb-2 text-secondary' %>
+    <%= form.collection_select :category_id, @categories, :id, :name, { }, { class: 'form-select form-control border-0 border-bottom mb-4' } %>
   </div>
 <% end %>

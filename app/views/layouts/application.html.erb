@@ -34,6 +34,8 @@
           <%= button_tag "Next", class: "fs-5 fw-light nav-submit", form: "signup-form" %>
         <% elsif controller_name == 'categories' && action_name == 'new' %>
           <%= button_tag "Add", class: "fs-5 fw-light nav-submit", form: "category-form" %>
+        <% elsif controller_name == 'purchases' && action_name == 'new' %>
+          <%= button_tag "Add", class: "fs-5 fw-light nav-submit", form: "purchase-form" %>
         <%else%>
           <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 50 50"><path fill="white" d="M23 36c-7.2 0-13-5.8-13-13s5.8-13 13-13s13 5.8 13 13s-5.8 13-13 13zm0-24c-6.1 0-11 4.9-11 11s4.9 11 11 11s11-4.9 11-11s-4.9-11-11-11z"></path><path fill="white" d="m32.682 31.267l8.98 8.98l-1.414 1.414l-8.98-8.98z"></path></svg>
         <%end%>
@@ -42,7 +44,7 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 p-3">
           <li class="nav-item d-md-flex mx-md-4">
             <%= link_to "Categories", root_path, class: "nav-link #{'disabled' if current_page?(root_path)}" %>
-            <%= link_to  "Transactions", purchases_path, class: "nav-link #{'disabled' if current_page?(purchases_path)}" %>
+            <%= link_to  "Purchases", purchases_path, class: "nav-link #{'disabled' if current_page?(purchases_path)}" %>
           </li>
         </ul>
       </div>
