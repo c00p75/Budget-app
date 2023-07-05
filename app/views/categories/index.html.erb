@@ -1,14 +1,11 @@
-<p style="color: green"><%= notice %></p>
+<div class="container pb-5">
+  <div id="categories" style="background: whitesmoke">
+    <%= link_to new_category_path, class: 'position-fixed bottom-0 end-0 m-4 z-1' do %>
+      <svg xmlns="http://www.w3.org/2000/svg" style="background: white; border-radius: 50%;" width="60" height="60" viewBox="0 0 20 20"><path fill="forestgreen" d="M11 9V5H9v4H5v2h4v4h2v-4h4V9h-4zm-1 11a10 10 0 1 1 0-20a10 10 0 0 1 0 20z"></path></svg>
+    <% end %>
 
-<h1>Categories</h1>
-
-<div id="categories">
-  <% @categories.each do |category| %>
-    <%= render category %>
-    <p>
-      <%= link_to "Show this category", category %>
-    </p>
-  <% end %>
+    <% @categories.each do |category| %>
+        <%= link_to render category %>
+    <% end %>
+  </div>
 </div>
-
-<%= link_to "New category", new_category_path %>

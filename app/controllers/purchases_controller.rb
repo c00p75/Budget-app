@@ -21,7 +21,7 @@ class PurchasesController < ApplicationController
 
   # POST /purchases or /purchases.json
   def create
-    @purchase = Purchase.new(purchase_params)
+    @purchase = current_user.purchases.create(purchase_params)
 
     respond_to do |format|
       if @purchase.save
@@ -65,6 +65,6 @@ class PurchasesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def purchase_params
-      params.require(:purchase).permit(:name, :amount, :author_id)
+      params.require(:purchase).permit(:name, :amount)
     end
 end
