@@ -26,7 +26,13 @@
         <% end %>
           
         <h1 class="fs-3 fw-normal m-0">
-          <%= current_page?(new_user_session_path) ? 'LOGIN' : controller_name %>  
+          <% if current_page?(new_user_session_path) %>
+            <%= "LOGIN" %>
+          <% elsif controller_name == 'purchases' %>
+            <%= "TRANSACTIONS" %>
+          <% else %>
+            <%= controller_name.upcase %>  
+          <% end %>
         </h1>
         <% if controller_name == 'sessions' %>
           <%= button_tag "Login", class: "fs-5 fw-light nav-submit", form: "login-form" %>
@@ -45,7 +51,7 @@
           <li class="nav-item d-md-flex mx-md-4">
             <% if controller_name != 'sessions' %>
               <%= link_to "Categories", root_path, class: "nav-link #{'disabled' if current_page?(root_path)}" %>
-              <%= link_to "All Purchases", purchases_path, class: "nav-link #{'disabled' if current_page?(purchases_path)}" %>
+              <%= link_to "All Transactions", purchases_path, class: "nav-link #{'disabled' if current_page?(purchases_path)}" %>
               <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link border-0 text-light", style: "background: none;" %>
             <% end %>
           </li>
