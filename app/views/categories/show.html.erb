@@ -1,10 +1,8 @@
-<p style="color: green"><%= notice %></p>
+<div class="container">
+  <%= render partial: 'purchases/purchases', locals: { purchases: @purchases } %>
 
-<%= render @category %>
-
-<div>
-  <%= link_to "Edit this category", edit_category_path(@category) %> |
-  <%= link_to "Back to categories", categories_path %>
-
-  <%= button_to "Destroy this category", @category, method: :delete %>
+  <%= link_to new_purchase_path(:category_id => @category.id), class: "border shadow-sm bg-white py-2 px-3 d-flex justify-content-around align-items-center my-3 px-3", style: "min-height: 7em" do %>
+    <svg xmlns="http://www.w3.org/2000/svg" style="background: white; border-radius: 50%;" width="60" height="60" viewBox="0 0 20 20"><path fill="orange" d="M11 9V5H9v4H5v2h4v4h2v-4h4V9h-4zm-1 11a10 10 0 1 1 0-20a10 10 0 0 1 0 20z"></path></svg>
+    Add New Transaction
+  <% end %>
 </div>

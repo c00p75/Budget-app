@@ -1,13 +1,15 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: %i[ show edit update destroy ]
 
-  # GET /categories or /categories.json
+  # GET /categories
   def index
     @categories = Category.all
   end
 
-  # GET /categories/1 or /categories/1.json
+  # GET /categories/1 
   def show
+    @category = Category.find(params[:id])
+    @purchases = @category.purchases.order('created_at DESC')
   end
 
   # GET /categories/new
@@ -23,12 +25,10 @@ class CategoriesController < ApplicationController
   def create
     @category = Category.new(category_params)
 
-    respond_to do |format|
-      if @category.save
-        redirect_to category_url(@category), notice: "Category was successfully created."
-      else
-        render :new, status: :unprocessable_entity
-      end
+    if @category.save
+      redirect_to category_url(@category), notice: "Category was successfully created."
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 

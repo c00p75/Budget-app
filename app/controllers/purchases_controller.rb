@@ -6,31 +6,29 @@ class PurchasesController < ApplicationController
     @purchases = Purchase.all
   end
 
-  # GET /purchases/1 or /purchases/1.json
-  def show
-  end
-
   # GET /purchases/new
   def new
+    @categories = Category.all
     @purchase = Purchase.new
+    return unless params[:category_id]
+    @category = Category.find(params[:category_id])
   end
 
   # GET /purchases/1/edit
   def edit
   end
 
-  # POST /purchases or /purchases.json
+  # POST /purchases
   def create
-    @purchase = current_user.purchases.create(purchase_params)
+    @purchase = Purchase.new(purchase_params)
+    @purchase.author = current_user
+    @category = Category.find(params[:purchase][:category_id])
+    @category.purchases << @purchase
 
-    respond_to do |format|
-      if @purchase.save
-        format.html { redirect_to purchase_url(@purchase), notice: "Purchase was successfully created." }
-        format.json { render :show, status: :created, location: @purchase }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @purchase.errors, status: :unprocessable_entity }
-      end
+    if @purchase.save
+      redirect_to category_url(params[:purchase][:category_id]), notice: 'Transaction was successfully created.'
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 

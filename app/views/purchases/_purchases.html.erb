@@ -1,0 +1,20 @@
+<div id="purchases">
+    <% purchases.each do |purchase| %>
+      <div id="<%= dom_id purchase %>" class=" d-flex flex-column border shadow-sm bg-white py-2 px-3 my-3 px-3" style="min-height: 7em">
+        <div class="row d-flex justify-content-between align-items-center flex-grow-1">
+          <div style="width: 60%">
+            <strong><%= purchase.name %></strong>
+          </div>
+
+          <div style="width: 40%" class="text-end">
+            <strong>$ <%= purchase.amount %></strong>  
+          </div>
+        </div>
+        <div class="row">
+          <span class="fs-6 text-secondary"><%= purchase.created_at.strftime('%d %b %Y') %></span>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+
