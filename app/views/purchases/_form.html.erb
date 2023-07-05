@@ -20,6 +20,11 @@
   </div>
 
   <div class="field row">
-    <%= form.collection_select :category_id, @categories, :id, :name, { prompt: 'Select a category' }, { class: 'form-select form-control border-0 border-bottom mb-4' } %>
+    <%if @category %>
+      <%= form.collection_select :category_id, @categories, :id, :name, { selected: @category.id }, { class: 'form-select form-control border-0 border-bottom mb-4' } %>
+    <%else%>
+      <%= form.collection_select :category_id, @categories, :id, :name, { prompt: 'Select a category' }, { class: 'form-select form-control border-0 border-bottom mb-4' } %>
+    <%end%>
+    
   </div>
 <% end %>

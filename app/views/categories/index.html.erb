@@ -5,7 +5,9 @@
     <% end %>
 
     <% @categories.each do |category| %>
-        <%= link_to render category %>
+      <%= link_to category_path(category) do %>
+        <%= render category %>
+      <% end %>
     <% end %>
   </div>
 </div>

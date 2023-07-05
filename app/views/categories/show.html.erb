@@ -1,10 +1,7 @@
-<p style="color: green"><%= notice %></p>
+<div class="container pb-5">
+  <p style="color: green"><%= notice %></p>
 
-<%= render @category %>
+  <%= render partial: 'purchases/purchases', locals: { purchases: @purchases } %>
 
-<div>
-  <%= link_to "Edit this category", edit_category_path(@category) %> |
-  <%= link_to "Back to categories", categories_path %>
-
-  <%= button_to "Destroy this category", @category, method: :delete %>
+  <%= link_to "New purchase", new_purchase_path(:category_id => @category.id) %>
 </div>

@@ -6,15 +6,12 @@ class PurchasesController < ApplicationController
     @purchases = Purchase.all
   end
 
-  # GET /purchases/1 or /purchases/1.json
-  def show
-
-  end
-
   # GET /purchases/new
   def new
     @categories = Category.all
     @purchase = Purchase.new
+    return unless params[:category_id]
+    @category = Category.find(params[:category_id])
   end
 
   # GET /purchases/1/edit
