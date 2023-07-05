@@ -16,7 +16,7 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary text-light" style="background: royalblue">
       <div class="container-fluid">
         <% if action_name == 'new' || action_name == 'show' %>
-          <%= link_to :back do %>
+          <%= link_to root_path do %>
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path fill="white" d="M20 11H7.83l5.59-5.59L12 4l-8 8l8 8l1.41-1.41L7.83 13H20v-2z"></path></svg>
           <% end %>
           <% else %>
@@ -33,9 +33,9 @@
         <% elsif controller_name == 'registrations' %>
           <%= button_tag "Next", class: "fs-5 fw-light nav-submit", form: "signup-form" %>
         <% elsif controller_name == 'categories' && action_name == 'new' %>
-          <%= button_tag "Add", class: "fs-5 fw-light nav-submit", form: "category-form" %>
+          <%= button_tag "Save", class: "fs-5 fw-light nav-submit", form: "category-form" %>
         <% elsif controller_name == 'purchases' && action_name == 'new' %>
-          <%= button_tag "Add", class: "fs-5 fw-light nav-submit", form: "purchase-form" %>
+          <%= button_tag "Save", class: "fs-5 fw-light nav-submit", form: "purchase-form" %>
         <%else%>
           <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 50 50"><path fill="white" d="M23 36c-7.2 0-13-5.8-13-13s5.8-13 13-13s13 5.8 13 13s-5.8 13-13 13zm0-24c-6.1 0-11 4.9-11 11s4.9 11 11 11s11-4.9 11-11s-4.9-11-11-11z"></path><path fill="white" d="m32.682 31.267l8.98 8.98l-1.414 1.414l-8.98-8.98z"></path></svg>
         <%end%>
