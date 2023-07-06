@@ -2,12 +2,13 @@ class Category < ApplicationRecord
   has_and_belongs_to_many :purchases
 
   validates :name, presence: true, uniqueness: true
+  validates :icon, presence: true
 
-  before_create :capitalize_name
+  before_create :titleize_name
 
   private
 
-  def capitalize_name
+  def titleize_name
     self.name = name.titleize
   end
 end

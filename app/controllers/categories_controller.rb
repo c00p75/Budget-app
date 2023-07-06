@@ -1,12 +1,12 @@
 class CategoriesController < ApplicationController
-  before_action :set_category, only: %i[ show edit update destroy ]
+  before_action :set_category, only: %i[show edit update destroy]
 
   # GET /categories
   def index
     @categories = Category.all
   end
 
-  # GET /categories/1 
+  # GET /categories/1
   def show
     @category = Category.find(params[:id])
     @purchases = @category.purchases.order('created_at DESC')
@@ -17,16 +17,12 @@ class CategoriesController < ApplicationController
     @category = Category.new
   end
 
-  # GET /categories/1/edit
-  def edit
-  end
-
   # POST /categories or /categories.json
   def create
     @category = Category.new(category_params)
 
     if @category.save
-      redirect_to category_url(@category), notice: "Category was successfully created."
+      redirect_to category_url(@category), notice: 'Category was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -36,7 +32,7 @@ class CategoriesController < ApplicationController
   def update
     respond_to do |format|
       if @category.update(category_params)
-        format.html { redirect_to category_url(@category), notice: "Category was successfully updated." }
+        format.html { redirect_to category_url(@category), notice: 'Category was successfully updated.' }
         format.json { render :show, status: :ok, location: @category }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -50,19 +46,20 @@ class CategoriesController < ApplicationController
     @category.destroy
 
     respond_to do |format|
-      format.html { redirect_to categories_url, notice: "Category was successfully destroyed." }
+      format.html { redirect_to categories_url, notice: 'Category was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_category
-      @category = Category.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def category_params
-      params.require(:category).permit(:name, :icon)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_category
+    @category = Category.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def category_params
+    params.require(:category).permit(:name, :icon)
+  end
 end

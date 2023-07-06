@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   skip_before_action :verify_authenticity_token
-  before_action :check_authentication   # Checks authentication before each controller action 
+  before_action :check_authentication # Checks authentication before each controller action
   before_action :authenticate_user!, unless: :devise_controller?
   before_action :update_allowed_parameters, if: :devise_controller?
 

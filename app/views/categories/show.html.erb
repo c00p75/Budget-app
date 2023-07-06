@@ -1,3 +1,7 @@
+<div class="fs-4 border-bottom border-4 shadow-sm px-2 py-3 bg-white d-flex justify-content-between align-items-center">
+  <span class="text-secondary"><%= @category.name %></span>
+  <span class="fw-bold">$<%= @category.purchases.count > 0 ? @category.purchases.sum(:amount) : 0 %></span>
+</div>
 <div class="container">
   <%= render partial: 'purchases/purchases', locals: { purchases: @purchases } %>
 
