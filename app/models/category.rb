@@ -3,11 +3,11 @@ class Category < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true
 
-  before_create :capitalize_name
+  before_create :titleize_name
 
   private
 
-  def capitalize_name
+  def titleize_name
     self.name = name.titleize
   end
 end

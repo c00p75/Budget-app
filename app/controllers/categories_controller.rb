@@ -17,10 +17,6 @@ class CategoriesController < ApplicationController
     @category = Category.new
   end
 
-  # GET /categories/1/edit
-  def edit
-  end
-
   # POST /categories or /categories.json
   def create
     @category = Category.new(category_params)
