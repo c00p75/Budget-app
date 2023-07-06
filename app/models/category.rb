@@ -2,6 +2,7 @@ class Category < ApplicationRecord
   has_and_belongs_to_many :purchases
 
   validates :name, presence: true, uniqueness: true
+  validates :icon, presence: true
 
   before_create :titleize_name
 

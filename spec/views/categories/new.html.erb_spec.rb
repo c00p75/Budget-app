@@ -10,7 +10,7 @@ RSpec.describe 'categories/new', type: :view do
 
   it 'should display the category form fields' do
     expect(rendered).to have_field('Name')
-    expect(rendered).to have_field('Icon link ( i.e https://...png )')
+    expect(rendered).to have_field('Icon (http//..png, jpg, jpeg)')
   end
 
   it 'should display validation errors' do
@@ -19,5 +19,12 @@ RSpec.describe 'categories/new', type: :view do
     assign(:category, @category) # Assign the category with errors to the view
     render # Render the view
     expect(rendered).to have_content('Name cannot be blank')
+  end
+  it 'should display validation errors' do
+    @category = Category.new
+    @category.errors.add(:icon, 'cannot be blank')
+    assign(:category, @category) # Assign the category with errors to the view
+    render # Render the view
+    expect(rendered).to have_content('Icon cannot be blank')
   end
 end

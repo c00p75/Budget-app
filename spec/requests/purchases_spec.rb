@@ -4,7 +4,7 @@ RSpec.describe PurchasesController, type: :request do
   include Devise::Test::IntegrationHelpers
   before(:example) do
     @user = User.create(name: 'Ben', email: 'gmail@gmail.com', password: '123456')
-    @category = Category.create(name: 'Healthcare', icon: '')
+    @category = Category.create(name: 'Healthcare', icon: 'someicon.png')
     @purchase = Purchase.create(name: 'Monthly checkup', amount: 400, author: @user)
     @category.purchases << @purchase
   end

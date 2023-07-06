@@ -4,7 +4,7 @@ RSpec.describe 'categories/index', type: :view do
   include Devise::Test::IntegrationHelpers
   before(:example) do
     @user = User.create(name: 'Ben', email: 'gmail@gmail.com', password: '123456')
-    @category = Category.create(name: 'Pets', icon: '')
+    @category = Category.create(name: 'Pets', icon: 'someicon.png')
     @purchase = Purchase.create(name: 'Dog food', amount: 20, author: @user)
     @category.purchases << @purchase
     @categories = Category.all

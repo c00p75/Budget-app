@@ -4,7 +4,7 @@ RSpec.describe CategoriesController, type: :request do
   include Devise::Test::IntegrationHelpers
   before(:example) do
     @user = User.create(name: 'Ben', email: 'gmail@gmail.com', password: '123456')
-    @category = Category.create(name: 'Pets', icon: '')
+    @category = Category.create(name: 'Pets', icon: 'someicon.png')
     @purchase = Purchase.create(name: 'Dog food', amount: 20, author: @user)
     @category.purchases << @purchase
   end
@@ -59,7 +59,7 @@ RSpec.describe CategoriesController, type: :request do
   describe 'POST /create' do
     before do
       sign_in @user
-      post categories_path, params: { category: { name: 'Education', icon: '' } }
+      post categories_path, params: { category: { name: 'Education', icon: 'someicon.png' } }
     end
 
     it 'should return response status correct (ok)' do

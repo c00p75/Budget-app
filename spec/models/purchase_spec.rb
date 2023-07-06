@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Purchase, type: :model do
   before(:example) do
     @user = User.create(name: 'Ben', email: 'gmail@gmail.com', password: '123456')
-    @category = Category.create(name: 'Pets', icon: '')
+    @category = Category.create(name: 'Pets', icon: 'someicon.png')
     @purchase = Purchase.create(name: 'Dog food', amount: 20, author: @user)
     @category.purchases << @purchase
   end
