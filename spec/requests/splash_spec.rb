@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe "Splashes", type: :request do
+RSpec.describe 'Splashes', type: :request do
   before(:example) do
     @user = User.create(name: 'Ben', email: 'gmail@gmail.com', password: '123456')
   end
-  describe "GET /index" do
+  describe 'GET /index' do
     before do
       get budget_wiz_path
     end
@@ -21,6 +21,5 @@ RSpec.describe "Splashes", type: :request do
     it 'contains the correct content' do
       expect(response.body).to include 'Budget'
     end
-
   end
 end

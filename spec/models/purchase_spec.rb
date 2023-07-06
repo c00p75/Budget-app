@@ -17,7 +17,7 @@ RSpec.describe Purchase, type: :model do
       expect(@purchase).to_not be_valid
     end
     it 'should not be valid' do
-      @purchase.name = 'a'*51
+      @purchase.name = 'a' * 51
       expect(@purchase).to_not be_valid
     end
     it 'should not be valid' do

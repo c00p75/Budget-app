@@ -3,6 +3,5 @@ class SplashController < ApplicationController
     # Do nothing to skip authentication
   end
 
-  def index
-  end
+  def index; end
 end

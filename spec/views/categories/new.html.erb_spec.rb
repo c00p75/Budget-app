@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe "categories/new", type: :view do
+RSpec.describe 'categories/new', type: :view do
   before(:example) do
     @user = User.create(name: 'Ben', email: 'gmail@gmail.com', password: '123456')
     sign_in @user
-    assign(:category, Category.new(name: "Education", icon: "icons/books.png"))
+    assign(:category, Category.new(name: 'Education', icon: 'icons/books.png'))
     render
   end
 

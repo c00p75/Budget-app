@@ -1,12 +1,12 @@
 require 'rails_helper'
 
-RSpec.describe "purchases/new", type: :view do
+RSpec.describe 'purchases/new', type: :view do
   before(:example) do
     @user = User.create(name: 'Ben', email: 'gmail@gmail.com', password: '123456')
     @category = Category.create(name: 'Pets', icon: '')
     @categories = Category.all
     sign_in @user
-    assign(:purchase, Purchase.new(name: "books", amount: 50))
+    assign(:purchase, Purchase.new(name: 'books', amount: 50))
     render
   end
 

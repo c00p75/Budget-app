@@ -43,7 +43,8 @@ RSpec.describe PurchasesController, type: :request do
   describe 'POST /create' do
     before do
       sign_in @user
-      post purchases_path, params: {  purchase: {name: 'Flu medicine', amount: 5, author: @user, category_id: @category.id} }
+      post purchases_path,
+           params: { purchase: { name: 'Flu medicine', amount: 5, author: @user, category_id: @category.id } }
     end
 
     it 'should return response status correct (ok)' do
