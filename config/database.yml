@@ -19,3 +19,7 @@ test:
 production:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>
+  port: 5432
+  database: mydb_63ax
+  username: mydb_63ax_user
+  password: pfZmmZvknctGbvZeQBER81UQ8eGWoPX0

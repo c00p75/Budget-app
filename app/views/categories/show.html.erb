@@ -1,12 +1,12 @@
-<div class="fs-4 border-bottom border-4 shadow-sm px-2 py-3 bg-white d-flex justify-content-between align-items-center">
-  <span class="text-secondary"><%= @category.name %></span>
-  <span class="fw-bold">$<%= @category.purchases.count > 0 ? @category.purchases.sum(:amount) : 0 %></span>
-</div>
-<div class="container">
-  <%= render partial: 'purchases/purchases', locals: { purchases: @purchases } %>
-
-  <%= link_to new_purchase_path(:category_id => @category.id), class: "border shadow-sm bg-white py-2 px-3 d-flex justify-content-around align-items-center my-3 px-3", style: "min-height: 7em" do %>
-    <svg xmlns="http://www.w3.org/2000/svg" style="background: white; border-radius: 50%;" width="60" height="60" viewBox="0 0 20 20"><path fill="orange" d="M11 9V5H9v4H5v2h4v4h2v-4h4V9h-4zm-1 11a10 10 0 1 1 0-20a10 10 0 0 1 0 20z"></path></svg>
-    Add New Transaction
-  <% end %>
+<div class="page-container">
+  <div class="fs-4 border-bottom border-4 shadow-sm px-2 py-3 bg-white d-flex justify-content-between align-items-center">
+    <span class="text-secondary"><%= @category.name %></span>
+    <span class="fw-bold">$<%= @category.purchases.count > 0 ? @category.purchases.sum(:amount) : 0 %></span>
+  </div>
+  <div class="container">
+    <%= render partial: 'purchases/purchases', locals: { purchases: @purchases } %>
+  </div>
+  <div style="background-color: #5fb523; width: 100%;" class="d-flex justify-content-around align-items-center p-3 position-absolute bottom-0 mt-4">
+      <%= link_to 'ADD NEW TRANSACTION', new_purchase_path(:category_id => @category.id),  class: "text-center text-light border border-white p-3", style: "width: 100%" %>
+  </div>
 </div>

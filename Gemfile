@@ -65,7 +65,7 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 
-  gem 'rubocop', '>= 1.0', '< 2.0'
+  gem 'rubocop'
 
   # Used to check for n + 1 problems
   gem 'bullet'
@@ -80,4 +80,4 @@ end
 
 gem 'cancancan'
 
-gem 'devise', '~> 4.9'
+gem 'devise'

@@ -56,3 +56,8 @@ a {
 .disabled {
   color: gainsboro !important;
 }
+
+.page-container {
+  position: relative !important;
+  min-height: 100vh !important;
+}

@@ -1,14 +1,14 @@
-<div class="container">
-  <div id="categories" style="background: whitesmoke">
-    <% @categories.each do |category| %>
-      <%= link_to category_path(category) do %>
-        <%= render category %>
+<div class="page-container">
+  <div class="container">
+    <div id="categories" style="background: whitesmoke">
+      <% @categories.each do |category| %>
+        <%= link_to category_path(category) do %>
+          <%= render category %>
+        <% end %>
       <% end %>
-    <% end %>
-
-    <%= link_to new_category_path,  class: "border shadow-sm bg-white py-2 px-3 d-flex justify-content-around align-items-center my-3 px-3", style: "min-height: 7em" do %>
-      <svg xmlns="http://www.w3.org/2000/svg" style="background: white; border-radius: 50%;" width="60" height="60" viewBox="0 0 20 20"><path fill="forestgreen" d="M11 9V5H9v4H5v2h4v4h2v-4h4V9h-4zm-1 11a10 10 0 1 1 0-20a10 10 0 0 1 0 20z"></path></svg>
-      Add Category
-    <% end %>
+    </div>
+  </div>
+  <div style="background-color: #5fb523; width: 100%;" class="d-flex justify-content-around align-items-center p-3 position-absolute bottom-0 mt-4">
+    <%= link_to 'ADD CATEGORY', new_category_path,  class: "text-center text-light border border-white p-3", style: "width: 100%" %>
   </div>
 </div>
