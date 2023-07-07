@@ -48,7 +48,7 @@ This app is build with Ruby on Rails and Postgresql.
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link-comming soon](https://github.com/c00p75/Budget-app)
+- [Live Demo Link-comming soon](https://budgetwiz.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
