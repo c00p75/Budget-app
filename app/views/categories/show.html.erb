@@ -1,10 +1,12 @@
-<div class="fs-4 border-bottom border-4 shadow-sm px-2 py-3 bg-white d-flex justify-content-between align-items-center">
-  <span class="text-secondary"><%= @category.name %></span>
-  <span class="fw-bold">$<%= @category.purchases.count > 0 ? @category.purchases.sum(:amount) : 0 %></span>
-</div>
-<div class="container">
-  <%= render partial: 'purchases/purchases', locals: { purchases: @purchases } %>
-</div>
-<div style="background-color: #5fb523; top: 100%; width: 100%;" class="d-flex justify-content-around align-items-center p-3 position-absolute mt-4">
-    <%= link_to 'ADD NEW TRANSACTION', new_purchase_path(:category_id => @category.id),  class: "text-center text-light border border-white p-3", style: "width: 100%" %>
+<div class="page-container">
+  <div class="fs-4 border-bottom border-4 shadow-sm px-2 py-3 bg-white d-flex justify-content-between align-items-center">
+    <span class="text-secondary"><%= @category.name %></span>
+    <span class="fw-bold">$<%= @category.purchases.count > 0 ? @category.purchases.sum(:amount) : 0 %></span>
+  </div>
+  <div class="container">
+    <%= render partial: 'purchases/purchases', locals: { purchases: @purchases } %>
+  </div>
+  <div style="background-color: #5fb523; width: 100%;" class="d-flex justify-content-around align-items-center p-3 position-absolute bottom-0 mt-4">
+      <%= link_to 'ADD NEW TRANSACTION', new_purchase_path(:category_id => @category.id),  class: "text-center text-light border border-white p-3", style: "width: 100%" %>
+  </div>
 </div>
