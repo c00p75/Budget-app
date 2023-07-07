@@ -1,0 +1,8 @@
+<div class="page-container">
+  <div class="container">
+    <%= render partial: 'purchases', locals: { purchases: @purchases } %>
+  </div>
+  <div style="background-color: #5fb523; width: 100%;" class="d-flex justify-content-around align-items-center p-3 position-absolute bottom-0 mt-4">
+      <%= link_to 'ADD NEW TRANSACTION', new_purchase_path,  class: "text-center text-light border border-white p-3", style: "width: 100%" %>
+  </div>
+</div>

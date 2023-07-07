@@ -1,0 +1,13 @@
+<div id="splash-screen">
+  <div>
+    <span class="d-flex justify-content-center">
+      <img src="<%= asset_path('wizard_hat.png') %>" alt="Splash Screen">
+    </span>
+    <h1>
+      Budget <br> Wiz
+    </h1>
+  </div>
+  <div class="row px-2" style="width: 100%">
+    <%= link_to "LOG IN", user_signed_in? ? purchases_path : new_user_session_path, class: "btn text-light p-2", style: "background: royalblue" %><br />
+    <%= link_to "SIGN UP", user_signed_in? ? purchases_path : new_user_registration_path, class: "btn p-2" %><br />
+</div>

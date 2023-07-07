@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Expletus+Sans:wght@700&display=swap');
+
+body {
+  background: whitesmoke !important;
+}
+
+a {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+.navbar .active {
+  display: flex !important;
+}
+
+.turbo-progress-bar { background-color: white; }
+
+#splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+#splash-screen h1 {
+  position: relative;
+  font-family: 'Expletus Sans', serif;
+  font-size: 4em;
+  text-align: center;
+  color: black;
+}
+
+#splash-screen img {
+  width: 4em;
+  margin-bottom: -1.5em;
+  z-index: 1;
+  transform: rotate(20deg) translate(19px, -4px);
+}
+
+.nav-submit {
+  background: none;
+  color: white;
+  border: 0;
+}
+
+.category-icon {
+  width: 5em;
+}
+
+.disabled {
+  color: gainsboro !important;
+}
+
+.page-container {
+  position: relative !important;
+  min-height: 100vh !important;
+}

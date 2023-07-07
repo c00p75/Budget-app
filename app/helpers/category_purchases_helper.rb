@@ -1,0 +1,2 @@
+module CategoryPurchasesHelper
+end

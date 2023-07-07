@@ -1,0 +1,20 @@
+<div id="<%= dom_id category %>" class="border shadow-sm bg-white py-2 px-3 d-flex justify-content-between align-items-center my-3 px-3" style="min-height: 7em">
+  <div class="d-flex justify-content-center" style="width: 25%">
+    <% if category.icon.empty? %>
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24"><path fill="#696969" d="m12 2l-5.5 9h11z"></path><circle cx="17.5" cy="17.5" r="4.5" fill="#696969"></circle><path fill="#696969" d="M3 13.5h8v8H3z"></path></svg>
+    <% else %>
+      <img src=<%= category.icon %> alt="category icon" class="category-icon">
+    <%  end%>
+  </div>
+
+  <div class="d-flex justify-content-center" style="width: 50%">
+    <strong><%= category.name %></strong>    
+  </div>
+
+  <div class="d-flex justify-content-center" style="width: 25%">
+    <strong>
+      $<%= category.purchases.count > 0 ? category.purchases.sum(:amount) : 0 %>
+    </strong>
+  </div>
+
+</div>

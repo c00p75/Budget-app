@@ -1,0 +1,30 @@
+<%= form_with(model: purchase, html: {id: "purchase-form", class: "p-4"}) do |form| %>
+  <% if purchase.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(purchase.errors.count, "error") %> prohibited this purchase from being saved:</h2>
+
+      <ul>
+        <% purchase.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field row">
+    <%= form.text_field :name, autofocus: true, autocomplete: "name", placeholder: "Name", class: "form-control border-0 border-bottom mb-4" %>
+  </div>
+
+  <div class="field row">
+    <%= form.number_field :amount, step: '0.01', placeholder: "Amount ($)", class: "form-control border-0 border-bottom mb-4" %>
+  </div>
+
+  <div class="field row">
+    <%if @category %>
+      <%= form.collection_select :category_id, @categories, :id, :name, { selected: @category.id }, { class: 'form-select form-control border-0 border-bottom mb-4' } %>
+    <%else%>
+      <%= form.collection_select :category_id, @categories, :id, :name, { prompt: 'Select a category' }, { class: 'form-select form-control border-0 border-bottom mb-4' } %>
+    <%end%>
+    
+  </div>
+<% end %>
