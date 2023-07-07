@@ -19,6 +19,7 @@ test:
 production:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>
-  # database: budgetwiz
-  # username: budgetwiz
-  # password: <%= ENV['MY_APP_RENDER_DATABASE_PASSWORD'] %>
+  port: 5432
+  database: mydb_63ax
+  username: mydb_63ax_user
+  password: pfZmmZvknctGbvZeQBER81UQ8eGWoPX0
