@@ -48,13 +48,13 @@ This app is build with Ruby on Rails and Postgresql.
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link-comming soon](https://budgetwiz.onrender.com/)
+- [Live Demo Link](https://budgetwiz.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🚀 Video Presentation <a name="presentation"></a>
 
-- [Video Presentation Link-comming seoon](https://www.loom.com/share/8ff833ee627a40568fee423fe0a64fe4?sid=32aa7328-283a-4356-8f81-cf431a929423)
+- [Video Presentation Link](https://www.loom.com/share/8ff833ee627a40568fee423fe0a64fe4?sid=32aa7328-283a-4356-8f81-cf431a929423)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
